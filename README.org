@@ -103,20 +103,10 @@ Resolves #17
 * Coding Conventions
 
 In order to keep code clean, readable and uniform, some coding
-conventions are needed.
+conventions are needed. Most of them are covered by using
+[[https://prettier.io/][Prettier]], use of which is mandatory.
 
-_General:_
-- Use Spaces, no tabs
-- Indent by two spaces (except Python, use four spaces)
-- Lines are shorter than 80 characters
-  - If a statement does not fit on one line, the best place
-    to break it, is after an ~=~ or comma or before an operator
-    #+BEGIN_SRC js
-    const a =
-      "This is a extremly very very very long line that needs to be split"
-      + " into multiple lines."
-    #+END_SRC
-- Remove line trailing white spaces
+*General:*
 - Do *not* try to be fancy or clever: Keep it simple and easy to read
   #+BEGIN_QUOTE
   Debugging is twice as hard as writing the code in the first
@@ -124,50 +114,25 @@ _General:_
   are, by definition, not smart enough to debug it.
   -- Brian Kernighan 
   #+END_QUOTE
-- Filenames start with a lower case letter and have the proper ending
+- Code duplication should be avoided. If you deem it necessary in
+  certain cases, leave a statement to the reviewer and future readers,
+  why you deem it necessary.
 
-_Variables:_
+*Variables:*
 - Use =camelCase= for naming variables
-- Constants are SCREAMING_SNAKE_CASE
-- In all other variables, do not use hyp-hens or under_scores
+- Constants are =SCREAMING_SNAKE_CASE=
+- In all other variables, do not use =hyp-hens= or =under_scores=
 - Variable names start with a letter
 - Names are clear and descriptive (exceptions for iterators can be
   made, if not overused)
 - Always declare variables
 - Reduce global variables as far as possible
 
-_Spaces and blank lines:_
-- Always put spaces around operators ( = + - * / ) and after commas
-  #+BEGIN_SRC js
-  const x = y + z;
-  const values = ["Volvo", "Saab", "Fiat"];
-  #+END_SRC
+*Spaces and blank lines:*
 - Blank lines improve readability by setting off sections of code that
   are logically related.
-- A keyword followed by =(= should be separated by a
-  space. Spaces are used to make things that are not invocations look
-  less like invocations, so for example, there should be space after
-  if or while.
-  #+BEGIN_SRC js
-  while (true) { }
-  #+END_SRC
 
-_Braces:_
-- Put the opening bracket at the end of the first line.
-- Use one space before the opening bracket.
-- Put the closing bracket on a new line, without leading spaces.
-- Do not end a complex statement with a semicolon.
-- Empty blocks can be closed in the same line
-
-#+BEGIN_SRC js
-function toCelsius(fahrenheit) {
-  return (5 / 9) * (fahrenheit - 32);
-}
-
-while (true) { }
-#+END_SRC
-
-_If-statements:_
+*If-statements:*
 - Always use braces, even for one line bodies
 
 #+BEGIN_SRC js
@@ -178,52 +143,19 @@ if (true) {
 
 ** Javascript
 
-- End statements with a semicolon.
+*Declarations:*
 - Use =const=, if not possible use =let=. Do *not* use =var=.
-- Use ="use strict";= at the top of each file.
 
-_Objects:_
-
-- Place the opening bracket on the same line as the object name.
-- Use colon plus one space between each property and its value.
-- Use quotes around string values, not around numeric values.
-- Do not add a comma after the last property-value pair.
-- Place the closing bracket on a new line, without leading spaces.
-- Always end an object definition with a semicolon.
-
-#+BEGIN_SRC js
-const person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue"
-};
-#+END_SRC
-
-Short objects can be written compressed, on one line, using spaces
-only between properties, like this:
-
-#+BEGIN_SRC js
-const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
-#+END_SRC
-
-_Functions:_
+*Functions:*
 - Use functional definitions
   #+BEGIN_SRC js
-  const myConstantFunc = _ => 7
+  const myConstantFunc = (_) => 7
   const mySlightlyMoreComplexFunc = (a, b) => {
     return a + b;
   };
   #+END_SRC
 - Parameters follow the same rules as variables
 - If a parameter is not used you can use =_= to indicate this
-
-*** Documenting Code
-
-Use JSDoc style comments. Find out more here:
-
-- [[http://usejsdoc.org/about-getting-started.html][JSDoc - Getting Started]]
-- [[http://usejsdoc.org/index.html#block-tags][JSDoc - All tags]]
 
 ** Adapted from
 
