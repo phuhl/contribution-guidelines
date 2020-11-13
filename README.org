@@ -8,3 +8,4 @@
 - [[https://github.com/phuhl/contribution-guidelines/blob/main/Git.org][On the use of Git]]
 - [[https://github.com/phuhl/contribution-guidelines/blob/main/Contribution.org][How to contribute properly]]
 - [[https://github.com/phuhl/contribution-guidelines/blob/main/Coding.org][On Coding]]
+- [[https://github.com/phuhl/contribution-guidelines/blob/main/Documentation.org][On Documenting]]
