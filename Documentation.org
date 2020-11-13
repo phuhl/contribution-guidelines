@@ -1,0 +1,35 @@
+* Documentation
+
+The reality about documentation is, you have to expect that "They
+Ain't Gonna Read It".
+
+That does not mean, documentation does not matter. It benefits quickly
+looking up required information, saving it from forgetting,
+transferring it to new brains and thus saving it from changes in
+personell, showing flaws and complexities in the software.
+
+This concludes to:
+- *Document do's*, required to get going. This makes it possible to for
+  someone to get of and working by them selves.
+- *Don't rely on documentation for don'ts*, they should be taken care
+  of
+  1. in code
+  2. in person
+  3. in documentation
+  Preferably, all of them, at least two.
+- Add your documentation to the right place (single source of
+  truth). This usually is the README (or additional files, linked to
+  in a wiki-style) in the repository
+- Keep it short
+- Keep it specific
+- Include what is needed
+- Design for search
+- Reduce prose, or a tutorial style. You should be able to jump to the
+  correct location and be able to comprehend that part without reading
+  everything before it
+- Use internal links
+
+** Adapted from
+
+[[https://blog.nuclino.com/brown-m-ms-or-why-no-one-s-reading-the-manual][Brown M&Ms, or Why No One's Reading the Manual]]
+https://news.ycombinator.com/item?id=23985938
