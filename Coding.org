@@ -1,0 +1,60 @@
+* Coding Conventions
+
+In order to keep code clean, readable and uniform, some coding
+conventions are needed. Most of them are covered by using
+[[https://prettier.io/][Prettier]], use of which is mandatory.
+
+*General:*
+- Do *not* try to be fancy or clever: Keep it simple and easy to read
+  #+BEGIN_QUOTE
+  Debugging is twice as hard as writing the code in the first
+  place. Therefore, if you write the code as cleverly as possible, you
+  are, by definition, not smart enough to debug it.
+  -- Brian Kernighan 
+  #+END_QUOTE
+- Code duplication should be avoided. If you deem it necessary in
+  certain cases, leave a statement to the reviewer and future readers,
+  why you deem it necessary.
+
+*Variables:*
+- Use =camelCase= for naming variables
+- Constants are =SCREAMING_SNAKE_CASE=
+- In all other variables, do not use =hyp-hens= or =under_scores=
+- Variable names start with a letter
+- Names are clear and descriptive (exceptions for iterators can be
+  made, if not overused)
+- Always declare variables
+- Reduce global variables as far as possible
+
+*Spaces and blank lines:*
+- Blank lines improve readability by setting off sections of code that
+  are logically related.
+
+*If-statements:*
+- Always use braces, even for one line bodies
+
+#+BEGIN_SRC js
+if (true) {
+  console.log("I have braces :)");
+}
+#+END_SRC
+
+** Javascript
+
+*Declarations:*
+- Use =const=, if not possible use =let=. Do *not* use =var=.
+
+*Functions:*
+- Use functional definitions
+  #+BEGIN_SRC js
+  const myConstantFunc = (_) => 7
+  const mySlightlyMoreComplexFunc = (a, b) => {
+    return a + b;
+  };
+  #+END_SRC
+- Parameters follow the same rules as variables
+- If a parameter is not used you can use =_= to indicate this
+
+** Adapted from
+
+- [[https://www.w3schools.com/js/js_conventions.asp][W3Schools JavaScript conventions]]
