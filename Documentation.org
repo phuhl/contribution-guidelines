@@ -29,7 +29,30 @@ This concludes to:
   everything before it
 - Use internal links
 
-** Adapted from
+*Adapted from*
+- [[https://blog.nuclino.com/brown-m-ms-or-why-no-one-s-reading-the-manual][Brown M&Ms, or Why No One's Reading the Manual]]
+  - https://news.ycombinator.com/item?id=23985938
 
-[[https://blog.nuclino.com/brown-m-ms-or-why-no-one-s-reading-the-manual][Brown M&Ms, or Why No One's Reading the Manual]]
-https://news.ycombinator.com/item?id=23985938
+** Architecture overview
+
+- For large (10k+ lines of code) projects add an ARCHITECTURE.org/.md file next to the README
+- Motivation: it takes 2x more time to write a patch if you are unfamiliar with the project, 
+  but it takes 10x more time to figure out where you should change the code.
+  - New contributer has now mental modal of the code, where is what?
+- Thus: ARCHITECTURE file
+  - Should describe the high-level architecture 
+  - Keep it short (will stay valid for longer, every contributer has to read it)
+  - Only document things that are not likely to change soon
+  - Revisit and update it 4 times a year
+  - Content
+    - Bird's eye view, Coarse-grained modules and their relations
+    - Should answer: Where is the thing that does X
+    - Name important files (prefere searchable names over links as links go stale)
+    - Architecrual principles (especially, if it is not apparent from the code, e.g. a intentional /lack/ of something)
+    - Boundaries between layers and systems
+    - Don't describe how the module works (if necessary to document, seperate document or inline comments)
+
+*Adapted from*
+- [[https://matklad.github.io//2021/02/06/ARCHITECTURE.md.html][ARCHITECTURE.md]]
+  - https://news.ycombinator.com/item?id=26048784
+    
