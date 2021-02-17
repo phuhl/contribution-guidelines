@@ -46,16 +46,16 @@ if (true) {
 #+BEGIN_SRC js
 // DONT DO:
 if (mySpecialCondition) {
-  // Super long and deeply nested stuff
+  // Super long and deeply nested stuff.
 } else {
   // Error handling for my special condition failing...
-  // By here I totally don't know anymore what condition got me here
+  // By here I totally don't know anymore what condition got me here.
 }
 
 // DO
 if (!mySpecialCondition) {
   // Error handling for my special condition failing...
-  // Use return or throw to abort rest of logic beeing executed
+  // Use return or throw to abort rest of logic beeing executed.
   // All stuff related to my special condition is contained in 
   // one section of code and not split over 10s of lines.
 }
