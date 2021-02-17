@@ -71,8 +71,8 @@ if (!mySpecialCondition) {
 *Functions:*
 - Use functional definitions
   #+BEGIN_SRC js
-  const myConstantFunc = (_) => 7
-  const mySlightlyMoreComplexFunc = (a, b) => {
+  const myConstantFunc = () => 7
+  const mySlightlyMoreComplexFunc = (a, _, b) => {
     return a + b;
   };
   #+END_SRC
