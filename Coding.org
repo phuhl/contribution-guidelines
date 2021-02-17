@@ -15,6 +15,8 @@ conventions are needed. Most of them are covered by using
 - Code duplication should be avoided. If you deem it necessary in
   certain cases, leave a statement to the reviewer and future readers,
   why you deem it necessary.
+- Try to keep together what belongs together, group code by conceptional units
+
 
 *Variables:*
 - Use =camelCase= for naming variables
@@ -37,6 +39,28 @@ conventions are needed. Most of them are covered by using
 if (true) {
   console.log("I have braces :)");
 }
+#+END_SRC
+
+- Try to keep together what belongs together:
+
+#+BEGIN_SRC js
+// DONT DO:
+if (mySpecialCondition) {
+  // Super long and deeply nested stuff
+} else {
+  // Error handling for my special condition failing...
+  // By here I totally don't know anymore what condition got me here
+}
+
+// DO
+if (!mySpecialCondition) {
+  // Error handling for my special condition failing...
+  // Use return or throw to abort rest of logic beeing executed
+  // All stuff related to my special condition is contained in 
+  // one section of code and not split over 10s of lines.
+}
+
+// Rest of logic downstream
 #+END_SRC
 
 ** Javascript
