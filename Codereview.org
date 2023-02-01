@@ -1,0 +1,129 @@
+#+TITLE: Code Reviews
+#+DATE: [2022-02-09 Wed]
+#+AUTHOR: Philipp Uhl
+
+Code reviews serve two main purposes:
+- Improve Code :: Find bugs and code smells.
+- Knowledge transfer :: Make other programmers familiar with the code you wrote.
+
+Both points are important. Improving the code early makes *trunk based*
+development and continuous deployment possible. Knowledge transfer
+increases the *code ownership of the team*. It makes collaboration on
+the same code easier. Also, you might learn a few nice tricks from
+your colleges.
+
+- Code review takes time. *But it pays.* So, don't rush, this is serious
+  work that needs to be done.
+- Code review can be hard for both reviewer (to do it with empathy)
+  and author (to accept criticism).
+
+* How to get code ready for review
+
+- Small PRs
+- It is a good idea to create PRs for work in progress.
+- Don't wait too long for creating a PR! Create *at least* on PR per
+  day. It helps getting feedback early and keeping PRs small.
+- A PR has to compile and not impair functionality of the existing
+  code.
+- Make sure, prettier, linter and tests pass
+- Follow the companies coding style guide. This reduces change
+  requests in code review.
+- Useful name for PR, if needed add a description to the PR to give
+  the reviewer some context.
+- Name the issue the PR is fixing.
+- If you faced issues and have some unconventional code in your PR,
+  make sure you elaborate on that. The reviewer does not know the
+  issues you faced while development, so you need to write them down
+  for them.
+- Don't rely on code review to find errors. While the add a layer of
+  security, there are no guarantees! Write tests, make sure you
+  covered all necessary test cases.
+- When opening a PR, assign somebody else to do the code review.
+  - Favor someone who knows the problem.
+
+** How to resolve requested changes
+
+- If questions were asked, try to answer them.
+  - Sometimes questions are asked to point out an issue, but sometimes
+    the reviewer just needs clarification.
+  - A question does not always mean, a change is needed.
+- Go through all comments.
+  - If the comment points out an actual issue, implement a fix.
+  - Sometimes a review misunderstood something or overlooked
+    something. Point out what the reviewer might have missed before
+    applying a potentially unneeded fix.
+- Sometimes a fix would be to big for the current PR.
+  - It can be a good idea to create a new issue and add a comment that
+    points out the new issue, created. This can help, keeping PRs
+    small and review cycles short.
+- Try to learn from the code review. Try to incorporate the feedback
+  into the code you will write in the future.
+- Try to be positive about each bug that was caught in code review! It
+  was found before it went into production AND you learned something.
+- If you disagree with some part of the review, feel free to contact
+  the reviewer directly or pull in a third developer to get yet
+  another view.
+
+* What to look out for as a reviewer
+
+- Linting, prettier and tests should pass before doing code review
+
+Look for:
+- Structure
+- Style
+- Logic
+- Performance
+- Test coverage
+- Design
+- Readability and *maintainability*
+- Functionality
+- Code duplication
+
+
+- Be constructive: give feedback that is helpful not hurtful. Provide
+  suggestions on how something could be done differently.
+- Ask questions when something is unclear. Sometimes code snippets my
+  be in a way for a reason, that you don't know. Ask politely for an
+  explanation before judging.
+- Mostly use code comments on GitHub to leave change requests or questions.
+- Sometimes it is a good idea to discuss a code snippet on Slack or in
+  person. This might be the case, when you expect that more
+  conversation is needed to clear things up, that sensibly done in the
+  GitHub comment section.
+- If you liked a code snippet, tell the coder. They might appreciate
+  the praise and learn more about your preferred style.
+- Keep positive: If you find a bug, it does not matter who introduced
+  the bug! It matters that you found it.
+- Don't assume, somebody else will find the bugs. Always assume,
+  that you are the last line of defense before the code goes into production.
+- Don't review too long at a time. Code review is mentally exhausting,
+  too. Take brakes. Try to keep it below 60 minutes at a time.
+- If you find a bug that was present before the PR and is still
+  present: Make sure to take steps to get it fixed. If it makes sense
+  to add it to the PR, request a change. Otherwise create an issue and
+  make sure it gets prioritized as needed.
+- Sometimes you will notice architectural issues or have an idea how a
+  refactor could improve the code base. Create an issue that describes
+  what should be done.
+- Sometimes you just want to point out a minor issue that could be
+  improved on but maybe not right now. Leave a comment, letting the
+  coder know what you think but that it is not blocking right now.
+
+Checklist:
+- [ ] Code
+
+** What to do when you find an issue
+
+- Select the affected lines and write a comment, either asking for
+  clarification or requesting a change.
+- When re-reviewing a PR, make sure all of your requests have been
+  addressed properly.
+
+** What to do when you are satisfied
+
+- Make sure,
+  - the current branch is up to date
+  - tests pass
+- If there are no known reasons not to merge... Merge
+- After merging, delete the old branch
+
